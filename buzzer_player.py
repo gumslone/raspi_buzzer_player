@@ -279,9 +279,19 @@ popcorn_melody = [
 	notes['A4'], notes['B4'], notes['C5'], notes['B4'], notes['C5'], notes['A4'], notes['B4'], notes['A4'], notes['B4'], notes['G4'], 
 	notes['A4'], notes['G4'],notes['A4'], notes['B4'], notes['C5'],
 	
-	#notes['FS5'], notes['E5'], notes['FS5'], notes['D5'], notes['A4'], notes['D5'], notes['FS4'], 
-	#notes['FS5'], notes['E5'], notes['FS5'], notes['D5'], notes['A4'], notes['D5'], notes['FS4'], 
+	notes['E5'], notes['D5'], notes['E5'], notes['C5'], notes['G4'], notes['C5'], notes['E4'], 
+	notes['E5'], notes['D5'], notes['E5'], notes['C5'], notes['G4'], notes['C5'], notes['E4'], 
 	
+	notes['E5'], notes['FS5'], notes['G5'], notes['FS5'], notes['G5'], notes['E5'], notes['FS5'], notes['E5'], notes['FS5'], notes['D5'], 
+	notes['E5'], notes['D5'],notes['E5'], notes['C5'], notes['E5'],
+	
+	###
+	
+	notes['E5'], notes['D5'], notes['E5'], notes['C5'], notes['G4'], notes['C5'], notes['E4'], 
+	notes['E5'], notes['D5'], notes['E5'], notes['C5'], notes['G4'], notes['C5'], notes['E4'], 
+	
+	notes['E5'], notes['FS5'], notes['G5'], notes['FS5'], notes['G5'], notes['E5'], notes['FS5'], notes['E5'], notes['FS5'], notes['D5'], 
+	notes['E5'], notes['D5'],notes['B4'], notes['D5'], notes['E5'],
 ]
 popcorn_tempo = [
 	8,8,8,8,8,8,4,
@@ -295,6 +305,40 @@ popcorn_tempo = [
 	
 	8,8,8,8,8,8,8,8,8,8,
 	8,8,8,8,4,
+	
+	8,8,8,8,8,8,4,
+	8,8,8,8,8,8,4,
+	
+	8,8,8,8,8,8,8,8,8,8,
+	8,8,8,8,4,
+	
+	8,8,8,8,8,8,4,
+	8,8,8,8,8,8,4,
+	
+	8,8,8,8,8,8,8,8,8,8,
+	8,8,8,8,4,
+]
+
+twinkle_twinkle_melody = [
+	notes['C4'], notes['C4'], notes['G4'], notes['G4'], notes['A4'], notes['A4'], notes['G4'],
+	notes['F4'], notes['F4'], notes['E4'], notes['E4'], notes['D4'], notes['D4'], notes['C4'],
+	
+	notes['G4'], notes['G4'], notes['F4'], notes['F4'], notes['E4'], notes['E4'], notes['D4'],
+	notes['G4'], notes['G4'], notes['F4'], notes['F4'], notes['E4'], notes['E4'], notes['D4'],
+	
+	notes['C4'], notes['C4'], notes['G4'], notes['G4'], notes['A4'], notes['A4'], notes['G4'],
+	notes['F4'], notes['F4'], notes['E4'], notes['E4'], notes['D4'], notes['D4'], notes['C4'],
+]
+
+twinkle_twinkle_tempo = [
+	4,4,4,4,4,4,2,
+	4,4,4,4,4,4,2,
+	
+	4,4,4,4,4,4,2,
+	4,4,4,4,4,4,2,
+	
+	4,4,4,4,4,4,2,
+	4,4,4,4,4,4,2,
 ]
 
 def buzz(frequency, length):	 #create the function "buzz" and feed it the pitch and duration)
@@ -338,6 +382,9 @@ def play(melody,tempo,pause,pace=0.800):
 if __name__ == '__main__':		# Program start from here
 	try:
 		setup()
+		print "Twinkle, Twinkle, Little Star Theme"
+		play(twinkle_twinkle_melody, twinkle_twinkle_tempo, 0.50, 1.000)
+		time.sleep(2)
 		print "Popcorn Theme"
 		play(popcorn_melody, popcorn_tempo, 0.50, 1.000)
 		time.sleep(2)
