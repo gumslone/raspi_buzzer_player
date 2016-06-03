@@ -264,12 +264,6 @@ star_wars_tempo = [
 					4, 2, 4, 8, 4, 2,
 					]
 
- #a-g-a-e-c-e-a--
- #a-g-a-e-c-e-a--
- #a-b-c-b-c-c-a-d-a-d-d-g-a-a-g-a--
- #a-g-a-e-c-e-a--a-g-a-e-c-e-a--
- #a-b-cb-c-c-a-d-a-d-d-g-a-a-g-a-b-c-e-d-e-c-a-c-g-
- #e-d-e-c-a-c-g--e-f#-g-f#-e-e
 popcorn_melody = [
 	
 	notes['A4'], notes['G4'], notes['A4'], notes['E4'], notes['C4'], notes['E4'], notes['A3'], 
@@ -344,15 +338,19 @@ def play(melody,tempo,pause,pace=0.800):
 if __name__ == '__main__':		# Program start from here
 	try:
 		setup()
-		
+		print "Popcorn Theme"
 		play(popcorn_melody, popcorn_tempo, 0.50, 1.000)
 		time.sleep(2)
+		print "Star Wars Theme"
 		play(star_wars_melody, star_wars_tempo, 0.50, 1.000)
 		time.sleep(2)
+		print "Super Mario Theme"
 		play(melody, tempo, 1.3, 0.800)
 		time.sleep(2)
+		print "Super Mario Underworld Theme"
 		play(underworld_melody, underworld_tempo, 1.3, 0.800)
 		time.sleep(2)
+		print "Adventure Time Theme"
 		play(adventure_time_melody, adventure_time_tempo, 1.3, 1.500)
 		
 		destroy()
