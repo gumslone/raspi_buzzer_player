@@ -4,7 +4,7 @@
 #		Passive buzzer 			   Pi 
 #			VCC ----------------- 3.3V
 #			GND ------------------ GND
-#			SIG ---------------- Pin Gpio27
+#			SIG ---------------- Pin 11
 #
 #---------------------------------------------------
 import RPi.GPIO as GPIO
@@ -264,7 +264,44 @@ star_wars_tempo = [
 					4, 2, 4, 8, 4, 2,
 					]
 
-
+ #a-g-a-e-c-e-a--
+ #a-g-a-e-c-e-a--
+ #a-b-c-b-c-c-a-d-a-d-d-g-a-a-g-a--
+ #a-g-a-e-c-e-a--a-g-a-e-c-e-a--
+ #a-b-cb-c-c-a-d-a-d-d-g-a-a-g-a-b-c-e-d-e-c-a-c-g-
+ #e-d-e-c-a-c-g--e-f#-g-f#-e-e
+popcorn_melody = [
+	
+	notes['A4'], notes['G4'], notes['A4'], notes['E4'], notes['C4'], notes['E4'], notes['A3'], 
+	notes['A4'], notes['G4'], notes['A4'], notes['E4'], notes['C4'], notes['E4'], notes['A3'], 
+	
+	notes['A4'], notes['B4'], notes['C5'], notes['B4'], notes['C5'], notes['A4'], notes['B4'], notes['A4'], notes['B4'], notes['G4'], 
+	notes['A4'], notes['G4'],notes['A4'], notes['F4'], notes['A4'],
+	
+	
+	notes['A4'], notes['G4'], notes['A4'], notes['E4'], notes['C4'], notes['E4'], notes['A3'], 
+	notes['A4'], notes['G4'], notes['A4'], notes['E4'], notes['C4'], notes['E4'], notes['A3'], 
+	
+	notes['A4'], notes['B4'], notes['C5'], notes['B4'], notes['C5'], notes['A4'], notes['B4'], notes['A4'], notes['B4'], notes['G4'], 
+	notes['A4'], notes['G4'],notes['A4'], notes['B4'], notes['C5'],
+	
+	#notes['FS5'], notes['E5'], notes['FS5'], notes['D5'], notes['A4'], notes['D5'], notes['FS4'], 
+	#notes['FS5'], notes['E5'], notes['FS5'], notes['D5'], notes['A4'], notes['D5'], notes['FS4'], 
+	
+]
+popcorn_tempo = [
+	8,8,8,8,8,8,4,
+	8,8,8,8,8,8,4,
+	
+	8,8,8,8,8,8,8,8,8,8,
+	8,8,8,8,4,
+	
+	8,8,8,8,8,8,4,
+	8,8,8,8,8,8,4,
+	
+	8,8,8,8,8,8,8,8,8,8,
+	8,8,8,8,4,
+]
 
 def buzz(frequency, length):	 #create the function "buzz" and feed it the pitch and duration)
 
@@ -307,9 +344,15 @@ def play(melody,tempo,pause,pace=0.800):
 if __name__ == '__main__':		# Program start from here
 	try:
 		setup()
+		
+		play(popcorn_melody, popcorn_tempo, 0.50, 1.000)
+		time.sleep(2)
 		play(star_wars_melody, star_wars_tempo, 0.50, 1.000)
+		time.sleep(2)
 		play(melody, tempo, 1.3, 0.800)
+		time.sleep(2)
 		play(underworld_melody, underworld_tempo, 1.3, 0.800)
+		time.sleep(2)
 		play(adventure_time_melody, adventure_time_tempo, 1.3, 1.500)
 		
 		destroy()
